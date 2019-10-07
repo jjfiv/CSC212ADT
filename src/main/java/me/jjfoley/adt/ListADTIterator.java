@@ -7,7 +7,7 @@ import java.util.Iterator;
  * 
  * @author jfoley
  *
- * @param <ItemType>
+ * @param <ItemType> the type of the elements in the list.
  */
 public class ListADTIterator<ItemType> implements Iterator<ItemType> {
 	/**
@@ -30,6 +30,7 @@ public class ListADTIterator<ItemType> implements Iterator<ItemType> {
 
 	/**
 	 * Does this iterator have more data?
+	 * @return true if there are more items, false if not.
 	 */
 	@Override
 	public boolean hasNext() {
@@ -38,6 +39,7 @@ public class ListADTIterator<ItemType> implements Iterator<ItemType> {
 
 	/**
 	 * Get me the next item to use in my loop.
+	 * @return the next item in the list.
 	 */
 	@Override
 	public ItemType next() {

@@ -24,7 +24,7 @@ public abstract class SetADT<ItemType> implements Iterable<ItemType> {
 	 * Add a element to this set if new/unique.
 	 * 
 	 * @param value - the value to add.
-	 * @return 
+	 * @return true if the element was new. 
 	 */
 	public abstract boolean insert(ItemType value);
 
@@ -41,7 +41,7 @@ public abstract class SetADT<ItemType> implements Iterable<ItemType> {
 	 * you don't have.
 	 * 
 	 * @param value - the value to remove.
-	 * @return 
+	 * @return true if the element was found to remove.
 	 */
 	public abstract boolean remove(ItemType value);
 
@@ -122,6 +122,7 @@ public abstract class SetADT<ItemType> implements Iterable<ItemType> {
 	
 	/**
 	 * Don't let people mis-use this class.
+	 * @return nothing; crash only.
 	 */
 	@Override
 	public int hashCode() {

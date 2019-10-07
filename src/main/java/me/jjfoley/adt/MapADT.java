@@ -139,6 +139,7 @@ public abstract class MapADT<KeyType, ValueType> implements Iterable<Pair<KeyTyp
 	
 	/**
 	 * Don't let people mis-use this class.
+	 * @return nothing; crash only.
 	 */
 	@Override
 	public int hashCode() {

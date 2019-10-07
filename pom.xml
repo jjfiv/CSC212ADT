@@ -7,11 +7,18 @@
   <groupId>me.jjfoley</groupId>
   <artifactId>ADT</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <name>ADT</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <javaVersion>1.8</javaVersion>
   </properties>
+  
+  <scm>
+    <connection>scm:git:git@github.com:jjfiv/CSC212ADT.git</connection>
+    <url>https://github.com/jjfiv/CSC212ADT</url>
+    <tag>HEAD</tag>
+  </scm>
   
   <dependencies>
     <dependency>
@@ -101,7 +108,7 @@
           </execution>
         </executions>
       </plugin>
-
+      
     </plugins>
   </build>
 

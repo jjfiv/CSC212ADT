@@ -117,6 +117,8 @@ public abstract class ListADT<ItemType> implements Iterable<ItemType> {
 	/**
 	 * Check the index for a get/set/remove method.
 	 * Not for LinkedList classes!
+	 * @param index - what index are we validating?
+	 * @throws BadIndexError if the index is out of range.
 	 */
 	protected void checkExclusiveIndex(int index) {
 		if (index < 0) {
@@ -130,6 +132,8 @@ public abstract class ListADT<ItemType> implements Iterable<ItemType> {
 	/**
 	 * Check the index for an add method.
 	 * Not for LinkedList classes!
+	 * @param index - what index are we validating?
+	 * @throws BadIndexError if the index is out of range.
 	 */
 	protected void checkInclusiveIndex(int index) {
 		if (index < 0) {
@@ -207,6 +211,7 @@ public abstract class ListADT<ItemType> implements Iterable<ItemType> {
 	
 	/**
 	 * Don't let people mis-use this class.
+	 * @return nothing; crash only.
 	 */
 	@Override
 	public int hashCode() {

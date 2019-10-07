@@ -12,8 +12,8 @@ import me.jjfoley.adt.Pair;
  * This is a MapADT built out of a JavaMap.
  * @author jfoley
  *
- * @param <K> - the key 
- * @param <V>
+ * @param <K> - the key type.
+ * @param <V> - the value type.
  */
 public class JavaMap<K,V> extends MapADT<K,V> {
 	/**
@@ -30,7 +30,7 @@ public class JavaMap<K,V> extends MapADT<K,V> {
 	
 	/**
 	 * Create a MapADT copied from a Java Map.
-	 * @param toCopy
+	 * @param toCopy - the regular Java Map to copy.
 	 */
 	public JavaMap(Map<K,V> toCopy) {
 		this.data = new LinkedHashMap<K,V>(toCopy);
