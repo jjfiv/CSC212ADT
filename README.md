@@ -21,6 +21,6 @@ Include this project:
 <dependency>
   <groupId>com.github.jjfiv</groupId>
   <artifactId>CSC212ADT</artifactId>
-  <version>ADT-1.0</version>
+  <version>1.1</version>
 </dependency>
 ```
