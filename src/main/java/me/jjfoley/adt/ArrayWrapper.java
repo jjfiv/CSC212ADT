@@ -1,5 +1,7 @@
 package me.jjfoley.adt;
 
+import java.util.Arrays;
+
 import javax.annotation.Nullable;
 
 /**
@@ -39,10 +41,11 @@ public class ArrayWrapper<T> {
 	 * @param index - the position to get the value from.
 	 * @return the value stored in the array at that position (may be null).
 	 */
-	@SuppressWarnings("unchecked")
 	@Nullable
 	public T getIndex(int index) {
-		return (T) this.array[index];
+		@SuppressWarnings("unchecked")
+		T found = (T) this.array[index];
+		return found;
 	}
 
 	/**
@@ -51,5 +54,25 @@ public class ArrayWrapper<T> {
 	 */
 	public int size() {
 		return this.array.length;
+	}
+	
+	@Override
+	public int hashCode() {
+		throw new IllegalStateException("Collections do not make good keys!");
+	}
+	
+	@Override
+	public String toString() {
+		return Arrays.deepToString(this.array);
+	}
+	
+	@Override
+	public boolean equals(Object other) {
+		if (other instanceof ArrayWrapper<?>) {
+			@SuppressWarnings("unchecked")
+			ArrayWrapper<Object> right = (ArrayWrapper<Object>) other;
+			return Arrays.deepEquals(this.array, right.array);
+		}
+		return false;
 	}
 }

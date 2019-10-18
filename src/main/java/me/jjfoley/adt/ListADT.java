@@ -217,5 +217,25 @@ public abstract class ListADT<ItemType> implements Iterable<ItemType> {
 	public int hashCode() {
 		throw new IllegalArgumentException("Don't use a ListADT as a key in a hashmap!");
 	}
+	
+	/**
+	 * Make a view of this list. Helpful for binary search and Merge Sort.
+	 * @param start - the start index of the slice.
+	 * @param end - the end point of the slice (exclusive).
+	 * @return a "smaller" list that just looks at this one.
+	 */
+	public ListADT<ItemType> slice(int start, int end) {
+		return new ListSlice<>(this, start, end);
+	}
+	
+	/**
+	 * Add many things to this list.
+	 * @param other - the list to copy from.
+	 */
+	public void addAll(ListADT<ItemType> other) {
+		for (ItemType t : other) {
+			this.addBack(t);
+		}
+	}
 
 }
