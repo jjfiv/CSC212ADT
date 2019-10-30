@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import me.jjfoley.adt.errors.BadIndexError;
 import me.jjfoley.adt.errors.EmptyListError;
@@ -236,6 +238,38 @@ public abstract class ListADT<ItemType> implements Iterable<ItemType> {
 		for (ItemType t : other) {
 			this.addBack(t);
 		}
+	}
+	
+	/**
+	 * Swap two items; useful for sorting!
+	 * @param i one position
+	 * @param j the other position
+	 */
+	public void swap(int i, int j) {
+		ItemType temp = this.getIndex(i);
+		this.setIndex(i, this.getIndex(j));
+		this.setIndex(j, temp);
+	}
+	
+	/**
+	 * Shuffle this list in-place.
+	 * 
+	 * See <a href="https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle">Wikipedia/Fisher-Yates Shuffle</a> for how we do it efficiently: O(n).
+	 * 
+	 * @param rand - the random number generator to use.
+	 */
+	public void shuffle(Random rand) {
+		for (int i=this.size()-1; i>=1; i--) {
+			int j = rand.nextInt(i+1);
+			this.swap(i, j);
+		}
+	}
+	
+	/**
+	 * Shuffle this list in-place. Calls {@link #shuffle(Random rand)} directly.
+	 */
+	public void shuffle() {
+		this.shuffle(ThreadLocalRandom.current());
 	}
 
 }
