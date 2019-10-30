@@ -4,7 +4,7 @@
 
   <groupId>me.jjfoley</groupId>
   <artifactId>ADT</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <version>1.2</version>
   <name>ADT</name>
 
   <properties>
@@ -15,7 +15,7 @@
   <scm>
     <connection>scm:git:git@github.com:jjfiv/CSC212ADT.git</connection>
     <url>https://github.com/jjfiv/CSC212ADT</url>
-    <tag>HEAD</tag>
+    <tag>1.2</tag>
   </scm>
   
   <dependencies>
