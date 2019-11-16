@@ -158,13 +158,8 @@ public abstract class ListADT<ItemType> implements Iterable<ItemType> {
 	 * @return - a Java List object.
 	 */
 	public List<ItemType> toJava() {
-		List<ItemType> output = new ArrayList<>();
-		for (ItemType x : this) {
-			output.add(x);
-		}
-		return output;
+		return new ListADTAsJavaView<>(this);
 	}
-	
 	
 	/**
 	 * Teach java how to compare two ListADT objects.
